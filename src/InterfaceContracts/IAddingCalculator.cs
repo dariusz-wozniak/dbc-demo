@@ -22,6 +22,7 @@ namespace DesignByContract.InterfaceContracts
     }
 
     [ContractClassFor(typeof(IAddingCalculator))]
+// ReSharper disable once InconsistentNaming
     abstract class IAddingCalculatorContract : IAddingCalculator
     {
         public int Add(int a, int b)
@@ -41,22 +42,22 @@ namespace DesignByContract.InterfaceContracts
 
     class AddingCalculator : IAddingCalculator
     {
-        private int lastResult = 0;
+        private int _lastResult = 0;
 
         public int Add(int a, int b)
         {
-            return lastResult = a + b;
+            return _lastResult = a + b;
         }
 
         public int GetLastResult()
         {
-            return lastResult;
+            return _lastResult;
         }
 
         [ContractInvariantMethod]
         private void CheckIfLastResultIsInRange()
         {
-            Contract.Invariant(lastResult >= 0);
+            Contract.Invariant(_lastResult >= 0);
         }
     }
 

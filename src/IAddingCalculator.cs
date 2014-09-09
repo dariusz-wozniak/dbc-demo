@@ -11,7 +11,7 @@ namespace DesignByContract
 
     class AddingCalculator : IAddingCalculator
     {
-        private int lastResult = 0;
+        private int _lastResult = 0;
 
         public int Add(int a, int b)
         {
@@ -19,18 +19,18 @@ namespace DesignByContract
             if (b < 0) throw new ArgumentOutOfRangeException();
             // HINT: You may use Contract.EndContractBlock();
 
-            return lastResult = a + b;
+            return _lastResult = a + b;
         }
 
         public int GetLastResult()
         {
-            return lastResult;
+            return _lastResult;
         }
     }
 
-    class AddingCalculator_CodeContracts : IAddingCalculator
+    class AddingCalculatorCodeContracts : IAddingCalculator
     {
-        private int lastResult = 0;
+        private int _lastResult = 0;
 
         public int Add(int a, int b)
         {
@@ -38,18 +38,18 @@ namespace DesignByContract
             Contract.Requires<ArgumentOutOfRangeException>(b >= 0);
             Contract.Ensures(Contract.Result<int>() >= 0);
 
-            return lastResult = a + b;
+            return _lastResult = a + b;
         }
 
         public int GetLastResult()
         {
-            return lastResult;
+            return _lastResult;
         }
 
         [ContractInvariantMethod]
         private void CheckIfLastResultIsInRange()
         {
-            Contract.Invariant(lastResult >= 0);
+            Contract.Invariant(_lastResult >= 0);
         }
     }
 }
