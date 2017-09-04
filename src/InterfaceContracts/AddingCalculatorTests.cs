@@ -14,7 +14,8 @@ namespace DesignByContract.InterfaceContracts
             Assert.That(testDelegate, Throws.TypeOf<ArgumentOutOfRangeException>());
         }
 
-        [Test, Ignore]
+        [Test]
+        [Explicit]
         public void Add_Int32Overflow()
         {
             IAddingCalculator addingCalculator = new AddingCalculator();

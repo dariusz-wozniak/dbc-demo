@@ -57,7 +57,8 @@ namespace DesignByContract
     [TestFixture]
     class CalculatorSandbox
     {
-        [Test, Ignore]
+        [Test]
+        [Explicit]
         public void Playground()
         {
             var calculator = new AddingCalculatorCodeContracts();
