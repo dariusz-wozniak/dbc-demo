@@ -1,7 +1,8 @@
 using System;
+using DesignByContract.InterfaceContracts;
 using NUnit.Framework;
 
-namespace DesignByContract.InterfaceContracts
+namespace DesignByContract.Tests.Unit
 {
     [TestFixture]
     public class AddingCalculatorTests
