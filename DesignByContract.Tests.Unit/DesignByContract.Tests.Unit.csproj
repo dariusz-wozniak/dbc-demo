@@ -51,7 +51,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\DesignByContract.csproj">
+    <ProjectReference Include="..\DesignByContract\DesignByContract.csproj">
       <Project>{27642C72-D739-45AB-9B0C-EFE8471D7D31}</Project>
       <Name>DesignByContract</Name>
     </ProjectReference>

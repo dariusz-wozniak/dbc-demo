@@ -1,5 +1,4 @@
 using System;
-using DesignByContract.InterfaceContracts;
 using NUnit.Framework;
 
 namespace DesignByContract.Tests.Unit
